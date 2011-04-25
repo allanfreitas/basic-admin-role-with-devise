@@ -12,10 +12,10 @@
   <%= u.password_field :password %></p>
   
   <p><%= u.label 'Admin' %><br />
-  <%= u.check_box :is_admin, :disabled => editing_myself? %></p>
+  <%= u.check_box :is_admin, :disabled => if_editing_myself? %></p>
 
   <p><%= u.label 'Active' %><br />
-  <%= u.check_box :is_active, :disabled => editing_myself? %></p>
+  <%= u.check_box :is_active, :disabled => if_editing_myself? %></p>
   
   <p><%= u.submit "Update" %></p>
 <% end %>
