@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   end
   
   def is_active?
-    if current_user and !current_user.is_active?
+    if current_user && !current_user.is_active?
       reset_session 
       redirect_to(new_user_session_path, :alert => 'Your account is disabled.')
     end
