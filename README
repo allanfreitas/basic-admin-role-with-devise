@@ -7,3 +7,7 @@ To create a new user:
 user.save
 
 Right now is_admin is protected, so you will need to manually give your first user admin privileges (e.g. update users set is_admin="1" where id="1")
+
+This app also uses Ryan Bate's solution for dynamic attr_accessible, allowing admin users to do mass-assignment while preventing regular non-admin users from elevating privileges. If you want to add this to your own app:
+
+http://asciicasts.com/episodes/237-dynamic-attr-accessible
