@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Webcore</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+    
+<div id="container">
+  
+  <div id="login_information">
+    <% if user_signed_in? %>
+      Logged in: <%= link_to current_user.email, edit_user_registration_path %> || <%= link_to "Logout?", destroy_user_session_path, :confirm => 'Are you sure?' %><br />
+      <% if is_admin? %>
+         <p><%= link_to 'Admin Control Panel', admin_index_path %>
+       <% end %>
+    <% end %>
+  </div>
+        
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  
+<%= yield %>
+
+</div>
+
+</body>
+</html>
