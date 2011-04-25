@@ -9,7 +9,7 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: database 
+  database: database_development 
   pool: 5
   username: username
   password: password
@@ -22,18 +22,18 @@ test:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: webcore_test
+  database: database_test
   pool: 5
-  username: root
-  password:
+  username: password
+  password: username
   host: localhost
 
 production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: webcore_production
+  database: database_production
   pool: 5
-  username: root
-  password:
+  username: username
+  password: password
   host: localhost
