@@ -10,6 +10,9 @@
   
   <p><%= u.label :password %><br />
   <%= u.password_field :password %></p>
+  
+  <p><%= u.label :timezone %><br />
+  <%= u.time_zone_select :time_zone, nil, :default => 'UTC' %></p>
 
   <p><%= u.label 'Admin' %><br />
   <%= u.check_box :is_admin, :disabled => if_editing_myself? %></p>
@@ -20,3 +23,5 @@
   <p><%= u.submit "Update" %></p>
   
 <% end %>
+
+<%= render :partial => "footer" %>

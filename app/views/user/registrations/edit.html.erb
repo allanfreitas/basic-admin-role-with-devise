@@ -4,7 +4,7 @@
   <%= devise_error_messages! %>
   
   <p><%= f.label 'Timezone' %><br />
-  <%= f.time_zone_select :time_zone %></p>
+  <%= f.time_zone_select :time_zone, nil, :default => 'UTC'  %></p>
 
   <p><%= f.label 'New Password:' %><br />
   <%= f.password_field :password %></p>

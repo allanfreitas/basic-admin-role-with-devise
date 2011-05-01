@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   helper_method :is_admin?, :is_active?
   
   def set_timezone
-    if current_user
+    if user_signed_in?
       if !current_user.time_zone.nil?
         Time.zone = current_user.time_zone
       else
@@ -30,7 +30,7 @@ class ApplicationController < ActionController::Base
   end
   
   def kick_user_if_not_active
-    unless current_user && is_active?
+    if user_signed_in? && !is_active?
       reset_session
       redirect_to(new_user_session_path, :alert => 'Your account is disabled.')
     end
