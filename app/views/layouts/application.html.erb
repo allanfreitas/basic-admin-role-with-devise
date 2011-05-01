@@ -12,7 +12,6 @@
   <% flash.each do |key, msg| %>
     <div id="<%= key %>">
       <p><%= msg %></p>
-      <div class="clear"></div>
     </div>
   <% end %>
   <div id="login_information">
@@ -20,9 +19,8 @@
       Logged in: <%= link_to current_user.email, edit_user_registration_path %> || <%= link_to "Logout?", destroy_user_session_path, :confirm => 'Are you sure?' %><br />
     <% end %>
   </div>
-
     
-<%= yield %>
+  <%= yield %>
 
 </div>
 
