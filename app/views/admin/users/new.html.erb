@@ -1,6 +1,6 @@
 <h2>Create User</h2>
 
-<%= form_for @user, :url => admin_index_path do |f| %>
+<%= form_for @user, :url => admin_users_path do |f| %>
 
   <%= f.label :name %><br />
   <%= f.text_field :name %></p>
@@ -23,3 +23,5 @@
   <p><%= f.submit "Submit" %></p>
   
 <% end %>
+
+<%= render :partial => "footer" %>

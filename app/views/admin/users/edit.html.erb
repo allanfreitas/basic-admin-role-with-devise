@@ -1,6 +1,6 @@
 <h2>Edit User</h2>
 
-<%= form_for @user, :url => admin_path do |u| %>
+<%= form_for @user, :url => admin_user_path do |u| %>
 
   <%= u.label :name %><br />
   <%= u.text_field :name %></p>
@@ -10,7 +10,7 @@
   
   <p><%= u.label :password %><br />
   <%= u.password_field :password %></p>
-  
+
   <p><%= u.label 'Admin' %><br />
   <%= u.check_box :is_admin, :disabled => if_editing_myself? %></p>
 
@@ -18,6 +18,5 @@
   <%= u.check_box :is_active, :disabled => if_editing_myself? %></p>
   
   <p><%= u.submit "Update" %></p>
+  
 <% end %>
-
-<%= link_to "Home", root_path %> | <%= link_to "Admin", admin_index_path %>

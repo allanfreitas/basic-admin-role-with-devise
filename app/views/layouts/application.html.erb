@@ -13,9 +13,6 @@
   <div id="login_information">
     <% if user_signed_in? && is_active? %>
       Logged in: <%= link_to current_user.email, edit_user_registration_path %> || <%= link_to "Logout?", destroy_user_session_path, :confirm => 'Are you sure?' %><br />
-      <% if is_admin? %>
-         <p><%= link_to 'Home', root_path %> | <%= link_to 'Admin Control Panel', admin_index_path %>
-       <% end %>
     <% end %>
   </div>
         

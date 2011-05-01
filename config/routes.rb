@@ -10,7 +10,11 @@ Webcore::Application.routes.draw do
     put 'change_password' => 'devise/registrations#update'
   end
   
-  resources :admin
+  get 'admin' => 'admin#index', :as => :admin_index
+  
+  namespace :admin do
+    resources :users
+  end
 
   root :to => "home#index"
 
