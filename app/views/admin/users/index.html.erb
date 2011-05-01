@@ -26,26 +26,6 @@
 <% end %>
 </table>
 
-<h1>Recent Sessions</h1>
-
-<table>
-  <tr>
-    <th>ID</th>
-    <th>Email</th>
-    <th>Current Login</th>
-    <th>Current IP</th>
-  </tr>
-
-<% @sessions.each do |s| %>
-  <tr>
-    <td><%= s.id %></td>
-    <td><%= s.email %></td>
-    <td><%= s.current_sign_in_at %></td>
-    <td><%= s.current_sign_in_ip %></td>
-  </tr>
-<% end %>
-</table>
-
 <br />
 
 <%= render :partial => "footer" %>
