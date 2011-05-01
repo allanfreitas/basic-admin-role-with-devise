@@ -1,15 +1,18 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
-  before_filter :set_timezone
-  before_filter :authenticate_user!
-  #before_filter :kick_user_if_not_active, :unless => :devise_controller?
-  before_filter :kick_user_if_not_active
+  before_filter :authenticate_user!, :set_timezone, :kick_user_if_not_active
   
   helper_method :is_admin?, :is_active?
   
   def set_timezone
-    Time.zone = 'Pacific Time (US & Canada)'
+    if current_user
+      if !current_user.time_zone.nil?
+        Time.zone = current_user.time_zone
+      else
+        Time.zone = 'UTC'
+      end
+    end
   end
   
   protected

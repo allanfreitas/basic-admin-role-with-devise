@@ -5,9 +5,9 @@ Webcore::Application.routes.draw do
     post 'login' => 'devise/sessions#create', :as => :user_session
     get 'logout' => 'devise/sessions#destroy', :as => :destroy_user_session
     
-    get 'change_password' => 'devise/registrations#edit', :as => :edit_user_registration
-    post 'change_password' => 'devise/registrations#create', :as => :user_registration
-    put 'change_password' => 'devise/registrations#update'
+    get 'settings' => 'devise/registrations#edit', :as => :edit_user_registration
+    post 'settings' => 'devise/registrations#create', :as => :user_registration
+    put 'settings' => 'devise/registrations#update'
   end
   
   get 'admin' => 'admin#index', :as => :admin_index
