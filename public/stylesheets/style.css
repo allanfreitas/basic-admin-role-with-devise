@@ -49,8 +49,8 @@ a:hover {
 }
 
 #notice, #alert { 
-  width: 50%; 
-  margin: 0 auto 10px auto; 
+  width: 100%; 
+  margin: 0 auto 0 auto; 
   padding: 5px; 
 }
 
@@ -80,6 +80,8 @@ a:hover {
   color: #333; 
   border: 1px solid #333;
 }
+
+
 
 /* error explanations for forms */
 
@@ -113,6 +115,7 @@ a:hover {
   background-color: red;
   display: table;
 }
+
 
 
 /* table styling */

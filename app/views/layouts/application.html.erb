@@ -9,11 +9,13 @@
 <body>
 
 <div id="container">
+
   <% flash.each do |key, msg| %>
     <div id="<%= key %>">
-      <p><%= msg %></p>
+      <%= msg %>
     </div>
   <% end %>
+  
   <div id="login_information">
     <% if user_signed_in? && is_active? %>
       Logged in: <%= link_to current_user.email, edit_user_registration_path %> || <%= link_to "Logout?", destroy_user_session_path, :confirm => 'Are you sure?' %><br />
